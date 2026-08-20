@@ -121,7 +121,7 @@ export default function SignupPage() {
       <div className="flex flex-col justify-center px-6 py-12 sm:px-12">
         <div className="mx-auto w-full max-w-lg">
           <Link href="/" className="mb-8 inline-flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-paper">
               BF
             </span>
             <span className="text-[17px] font-semibold tracking-tight text-slate-900">
@@ -181,7 +181,7 @@ export default function SignupPage() {
                   value={form.businessName}
                   onChange={(e) => set("businessName")(e.target.value)}
                   invalid={!!errors.businessName}
-                  placeholder="TechNova Solutions"
+                  placeholder="BuildForgeo"
                 />
               </Field>
               <Field label="Business type" required>
@@ -255,26 +255,26 @@ export default function SignupPage() {
         </div>
       </div>
 
-      <div className="hidden flex-col justify-center bg-slate-900 px-12 py-12 lg:flex">
+      <div className="hidden flex-col justify-center bg-ink-900 px-12 py-12 lg:flex">
         <div className="mx-auto w-full max-w-sm">
-          <h2 className="text-2xl font-semibold tracking-tight text-white">
+          <h2 className="text-2xl font-semibold tracking-tight text-paper">
             Everything you need on day one
           </h2>
           <ul className="mt-7 space-y-4">
             {HIGHLIGHTS.map((h) => (
               <li key={h} className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-600">
-                  <Check size={13} className="text-white" />
+                  <Check size={13} className="text-paper" />
                 </span>
-                <span className="text-[15px] leading-snug text-slate-300">
+                <span className="text-[15px] leading-snug text-ink-300">
                   {h}
                 </span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-10 rounded-xl border border-slate-700 bg-slate-800/50 p-5">
-            <p className="text-[13px] leading-relaxed text-slate-400">
+          <div className="mt-10 rounded-xl border border-ink-700 bg-ink-800/50 p-5">
+            <p className="text-[13px] leading-relaxed text-ink-400">
               Just want to look around? Skip the form and open the demo
               workspace with a year of sample data.
             </p>
@@ -285,7 +285,7 @@ export default function SignupPage() {
               View demo
               <ArrowRight size={15} />
             </Link>
-            <p className="mt-3 text-xs text-slate-500">
+            <p className="mt-3 text-xs text-ink-500">
               Demo password: {DEMO_PASSWORD}
             </p>
           </div>

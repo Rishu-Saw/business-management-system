@@ -30,9 +30,9 @@ Password for every account: `demo1234`
 
 | Role | Email | What they can see |
 |---|---|---|
-| Business Owner | `rajesh@technovasolutions.in` | Everything — revenue, expenses, team, settings |
-| Sales Manager | `aditya@technovasolutions.in` | Customers, products, orders, invoices, payments, reports |
-| Employee | `daniel@technovasolutions.in` | Assigned customers and orders only — no financials |
+| Business Owner | `rajesh@buildforgeo.in` | Everything — revenue, expenses, team, settings |
+| Sales Manager | `aditya@buildforgeo.in` | Customers, products, orders, invoices, payments, reports |
+| Employee | `daniel@buildforgeo.in` | Assigned customers and orders only — no financials |
 
 The sign-in screen has one-click buttons for all three, so you can show how the
 navigation and the dashboard change with the role.
@@ -166,5 +166,5 @@ a real backend, so the path is mostly mechanical:
 
 ---
 
-*BizFlow is a portfolio demonstration product. TechNova Solutions and all
+*BizFlow is a portfolio demonstration product. BuildForgeo and all
 customers, invoices and figures in the demo workspace are fictional.*

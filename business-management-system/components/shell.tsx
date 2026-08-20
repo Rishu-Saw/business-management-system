@@ -27,6 +27,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { relativeTime } from "@/lib/format";
 import { useStore } from "@/lib/store";
 import type { Permission } from "@/lib/types";
+import { ThemeToggle } from "./theme";
 import { Avatar, Badge, Button } from "./ui";
 
 interface NavItem {
@@ -86,7 +87,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       >
         <div className="flex h-16 items-center justify-between border-b border-slate-200 px-5">
           <Link href="/dashboard" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-paper">
               {business.logoInitials}
             </span>
             <span className="min-w-0">
@@ -142,7 +143,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-30 bg-slate-900/40 lg:hidden"
+          className="fixed inset-0 z-30 bg-ink-900/60 lg:hidden"
           onClick={() => setMobileOpen(false)}
           aria-hidden="true"
         />
@@ -234,6 +235,7 @@ function Topbar({ onMenu }: { onMenu: () => void }) {
       </div>
 
       <div className="ml-auto flex items-center gap-1.5">
+        <ThemeToggle />
         <NotificationBell />
         <UserMenu session={session!} onSignOut={() => { signOut(); router.push("/login"); }} />
       </div>
@@ -267,7 +269,7 @@ function NotificationBell() {
       >
         <Bell size={19} />
         {unread > 0 && (
-          <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-rose-500 px-1 text-[10px] font-semibold text-white">
+          <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-rose-500 px-1 text-[10px] font-semibold text-paper">
             {unread > 9 ? "9+" : unread}
           </span>
         )}

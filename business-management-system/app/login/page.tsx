@@ -89,7 +89,7 @@ function LoginView() {
       <div className="flex flex-col justify-center px-6 py-12 sm:px-12">
         <div className="mx-auto w-full max-w-sm">
           <Link href="/" className="mb-10 inline-flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-paper">
               BF
             </span>
             <span className="text-[17px] font-semibold tracking-tight text-slate-900">
@@ -191,15 +191,15 @@ function LoginView() {
       </div>
 
       {/* demo panel */}
-      <div className="hidden flex-col justify-center bg-slate-900 px-12 py-12 lg:flex">
+      <div className="hidden flex-col justify-center bg-ink-900 px-12 py-12 lg:flex">
         <div className="mx-auto w-full max-w-md">
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-300">
             Demo workspace
           </p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">
-            Explore TechNova Solutions
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-paper">
+            Explore BuildForgeo
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-slate-300">
+          <p className="mt-3 text-[15px] leading-relaxed text-ink-300">
             A fictional IT services business with a full year of data — 25
             customers, 30 products and services, 50 invoices and a complete
             payment history. Pick a role to see how permissions change what you
@@ -215,37 +215,37 @@ function LoginView() {
                   key={acct.label}
                   onClick={() => quickSignIn(acct.employeeIndex)}
                   disabled={submitting}
-                  className="flex w-full items-center gap-4 rounded-xl border border-slate-700 bg-slate-800/60 p-4 text-left transition-colors hover:border-brand-500 hover:bg-slate-800 disabled:opacity-60"
+                  className="flex w-full items-center gap-4 rounded-xl border border-ink-700 bg-ink-800/60 p-4 text-left transition-colors hover:border-brand-500 hover:bg-ink-800 disabled:opacity-60"
                 >
                   <Avatar name={emp.name} hue={emp.avatarHue} size={40} />
                   <span className="min-w-0 flex-1">
-                    <span className="block text-sm font-medium text-white">
+                    <span className="block text-sm font-medium text-paper">
                       {acct.label}
                     </span>
-                    <span className="block truncate text-[13px] text-slate-400">
+                    <span className="block truncate text-[13px] text-ink-400">
                       {acct.blurb}
                     </span>
                   </span>
-                  <ArrowRight size={16} className="shrink-0 text-slate-500" />
+                  <ArrowRight size={16} className="shrink-0 text-ink-500" />
                 </button>
               );
             })}
           </div>
 
-          <div className="mt-8 rounded-xl border border-slate-700 bg-slate-800/40 p-4">
-            <p className="text-[13px] font-medium text-slate-200">
+          <div className="mt-8 rounded-xl border border-ink-700 bg-ink-800/40 p-4">
+            <p className="text-[13px] font-medium text-ink-300">
               Or sign in manually
             </p>
-            <dl className="mt-2 space-y-1 text-[13px] text-slate-400">
+            <dl className="mt-2 space-y-1 text-[13px] text-ink-400">
               <div className="flex gap-2">
                 <dt className="w-20 shrink-0">Email</dt>
-                <dd className="text-slate-300">
-                  {employees[0]?.email ?? "rajesh@technovasolutions.in"}
+                <dd className="text-ink-300">
+                  {employees[0]?.email ?? "rajesh@buildforgeo.in"}
                 </dd>
               </div>
               <div className="flex gap-2">
                 <dt className="w-20 shrink-0">Password</dt>
-                <dd className="text-slate-300">{DEMO_PASSWORD}</dd>
+                <dd className="text-ink-300">{DEMO_PASSWORD}</dd>
               </div>
             </dl>
           </div>

@@ -1,10 +1,151 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Theme palettes. Every colour utility in the app resolves through these
+ * variables (see tailwind.config.ts), so the dark theme is defined here alone.
+ *
+ * The dark ramp is designed rather than inverted: `white` becomes the raised
+ * card surface, slate-50/100 become hover and chip fills, 200/300 become
+ * borders, and 400-900 climb from faint to primary text.
+ */
 :root {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
+
+  --page-bg: 248 250 252;
+  --c-white: 255 255 255;
+
+  --c-slate-50: 248 250 252;
+  --c-slate-100: 241 245 249;
+  --c-slate-200: 226 232 240;
+  --c-slate-300: 203 213 225;
+  --c-slate-400: 148 163 184;
+  --c-slate-500: 100 116 139;
+  --c-slate-600: 71 85 105;
+  --c-slate-700: 51 65 85;
+  --c-slate-800: 30 41 59;
+  --c-slate-900: 15 23 42;
+
+  --c-brand-50: 238 244 255;
+  --c-brand-100: 217 229 255;
+  --c-brand-200: 188 209 255;
+  --c-brand-300: 142 179 255;
+  --c-brand-400: 89 138 255;
+  --c-brand-500: 51 99 255;
+  --c-brand-600: 29 64 245;
+  --c-brand-700: 22 47 225;
+  --c-brand-800: 24 41 182;
+
+  --c-emerald-50: 236 253 245;
+  --c-emerald-200: 167 243 208;
+  --c-emerald-400: 52 211 153;
+  --c-emerald-500: 16 185 129;
+  --c-emerald-600: 5 150 105;
+  --c-emerald-700: 4 120 87;
+
+  --c-rose-50: 255 241 242;
+  --c-rose-200: 254 205 211;
+  --c-rose-300: 253 164 175;
+  --c-rose-400: 251 113 133;
+  --c-rose-500: 244 63 94;
+  --c-rose-600: 225 29 72;
+  --c-rose-700: 190 18 60;
+  --c-rose-800: 159 18 57;
+
+  --c-amber-50: 255 251 235;
+  --c-amber-200: 253 230 138;
+  --c-amber-400: 251 191 36;
+  --c-amber-500: 245 158 11;
+  --c-amber-600: 217 119 6;
+  --c-amber-700: 180 83 9;
+  --c-amber-800: 146 64 14;
+
+  --c-violet-50: 245 243 255;
+  --c-violet-200: 221 214 254;
+  --c-violet-700: 109 40 217;
+
+  --shadow-card: 0 1px 2px 0 rgb(16 24 40 / 0.06), 0 1px 3px 0 rgb(16 24 40 / 0.1);
+  --shadow-pop: 0 12px 32px -8px rgb(16 24 40 / 0.18);
+
+  /* chart chrome + validated series colours (light surface) */
+  --chart-surface: #ffffff;
+  --chart-grid: #e2e8f0;
+  --chart-axis: #cbd5e1;
+  --chart-muted: #898781;
+  --series-revenue: #2a78d6;
+  --series-expenses: #eb6834;
+  --hero-glow: #eef4ff;
+
+  color-scheme: light;
+}
+
+.dark {
+  --page-bg: 10 17 32;
+  --c-white: 19 29 47;
+
+  --c-slate-50: 26 36 54;
+  --c-slate-100: 34 48 71;
+  --c-slate-200: 44 59 85;
+  --c-slate-300: 58 76 107;
+  --c-slate-400: 117 133 159;
+  --c-slate-500: 147 162 187;
+  --c-slate-600: 176 188 207;
+  --c-slate-700: 201 211 225;
+  --c-slate-800: 225 232 240;
+  --c-slate-900: 244 247 251;
+
+  --c-brand-50: 27 38 80;
+  --c-brand-100: 34 48 106;
+  --c-brand-200: 43 61 130;
+  --c-brand-300: 127 155 255;
+  --c-brand-400: 77 118 255;
+  --c-brand-500: 77 118 255;
+  --c-brand-600: 59 98 255;
+  --c-brand-700: 107 136 255;
+  --c-brand-800: 138 162 255;
+
+  --c-emerald-50: 14 42 32;
+  --c-emerald-200: 29 79 63;
+  --c-emerald-400: 52 211 153;
+  --c-emerald-500: 16 185 129;
+  --c-emerald-600: 52 211 153;
+  --c-emerald-700: 110 231 183;
+
+  --c-rose-50: 51 20 27;
+  --c-rose-200: 106 36 50;
+  --c-rose-300: 253 164 175;
+  --c-rose-400: 251 113 133;
+  --c-rose-500: 244 63 94;
+  --c-rose-600: 251 113 133;
+  --c-rose-700: 253 164 175;
+  --c-rose-800: 254 205 211;
+
+  --c-amber-50: 50 34 9;
+  --c-amber-200: 107 74 18;
+  --c-amber-400: 251 191 36;
+  --c-amber-500: 245 158 11;
+  --c-amber-600: 251 191 36;
+  --c-amber-700: 252 211 77;
+  --c-amber-800: 253 230 138;
+
+  --c-violet-50: 36 27 69;
+  --c-violet-200: 69 51 137;
+  --c-violet-700: 196 181 253;
+
+  --shadow-card: 0 1px 2px 0 rgb(0 0 0 / 0.4), 0 1px 3px 0 rgb(0 0 0 / 0.3);
+  --shadow-pop: 0 12px 32px -8px rgb(0 0 0 / 0.55);
+
+  --chart-surface: #131d2f;
+  --chart-grid: #2c3b55;
+  --chart-axis: #3a4c6b;
+  --chart-muted: #93a2bb;
+  --series-revenue: #3987e5;
+  --series-expenses: #d95926;
+  --hero-glow: #16224a;
+
+  color-scheme: dark;
 }
 
 @layer base {
@@ -13,7 +154,8 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 antialiased;
+    background-color: rgb(var(--page-bg));
+    @apply text-slate-900 antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -22,7 +164,8 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-white;
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2;
+    --tw-ring-offset-color: rgb(var(--page-bg));
   }
 
   /* Tabular figures keep money columns aligned. */
@@ -59,6 +202,11 @@
   }
 }
 
+/* Dark-mode date pickers would otherwise render a black-on-black icon. */
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) opacity(0.6);
+}
+
 /* Printing an invoice hides the app chrome and prints only the document. */
 @media print {
   .no-print {
@@ -71,6 +219,18 @@
     padding: 0;
     box-shadow: none !important;
     border: none !important;
+  }
+  /* Always print on white paper, whichever theme is on screen. */
+  html.dark {
+    --page-bg: 255 255 255;
+    --c-white: 255 255 255;
+    --c-slate-200: 226 232 240;
+    --c-slate-400: 148 163 184;
+    --c-slate-500: 100 116 139;
+    --c-slate-600: 71 85 105;
+    --c-slate-700: 51 65 85;
+    --c-slate-800: 30 41 59;
+    --c-slate-900: 15 23 42;
   }
   body {
     background: #fff;

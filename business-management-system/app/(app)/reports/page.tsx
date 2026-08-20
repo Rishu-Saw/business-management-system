@@ -281,7 +281,7 @@ function ReportsView() {
                 onClick={() => setReport(r.key)}
                 className={`rounded-lg px-3.5 py-2 text-[13px] font-medium transition-colors ${
                   report === r.key
-                    ? "bg-brand-600 text-white shadow-sm"
+                    ? "bg-brand-600 text-paper shadow-sm"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
                 }`}
               >

@@ -14,19 +14,20 @@ import type { SalesSlice, SeriesPoint } from "@/lib/selectors";
 import type { CurrencyCode } from "@/lib/types";
 
 /**
- * Chart palette — categorical slots 1 and 2 of the validated reference palette.
- * Verified on a #ffffff surface: worst-pair CVD ΔE 9.2, normal-vision ΔE 24.0.
- * Slots are assigned to entities (revenue, expenses) and never reordered.
+ * Chart palette — categorical slots 1 and 2 of the validated reference palette,
+ * resolved through CSS variables so each theme gets steps chosen for its own
+ * surface (see app/globals.css). Both pairs are CVD-validated against the
+ * surface they render on. Slots map to entities and are never reordered.
  */
 export const SERIES = {
-  revenue: "#2a78d6",
-  expenses: "#eb6834",
+  revenue: "var(--series-revenue)",
+  expenses: "var(--series-expenses)",
 } as const;
 
 const INK = {
-  muted: "#898781",
-  grid: "#e2e8f0",
-  axis: "#cbd5e1",
+  muted: "var(--chart-muted)",
+  grid: "var(--chart-grid)",
+  axis: "var(--chart-axis)",
 };
 
 function ChartTooltip({
@@ -148,7 +149,7 @@ export function RevenueChart({
               strokeWidth={2}
               fill="url(#grad-revenue)"
               dot={false}
-              activeDot={{ r: 4, strokeWidth: 2, stroke: "#fff" }}
+              activeDot={{ r: 4, strokeWidth: 2, stroke: "var(--chart-surface)" }}
               isAnimationActive={false}
             />
             <Area
@@ -159,7 +160,7 @@ export function RevenueChart({
               strokeWidth={2}
               fill="url(#grad-expenses)"
               dot={false}
-              activeDot={{ r: 4, strokeWidth: 2, stroke: "#fff" }}
+              activeDot={{ r: 4, strokeWidth: 2, stroke: "var(--chart-surface)" }}
               isAnimationActive={false}
             />
           </AreaChart>

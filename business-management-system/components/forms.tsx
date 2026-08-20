@@ -438,7 +438,7 @@ export function ItemForm({
               value={form.sku}
               onChange={(e) => set("sku", e.target.value)}
               invalid={!!errors.sku}
-              placeholder="TN-HAR-1001"
+              placeholder="BF-HAR-1001"
             />
           </Field>
         ) : (

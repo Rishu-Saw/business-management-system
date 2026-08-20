@@ -3,6 +3,7 @@
 import { Bell, Building2, FileText, RotateCcw, Save, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 import { RequirePermission } from "@/components/shell";
+import { ThemePicker } from "@/components/theme";
 import { useToast } from "@/components/toast";
 import {
   Button,
@@ -110,7 +111,7 @@ function SettingsView() {
               />
               <div className="space-y-4 p-5">
                 <div className="flex items-center gap-4 rounded-lg bg-slate-50 p-4">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand-600 text-lg font-bold text-white">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand-600 text-lg font-bold text-paper">
                     {profile.logoInitials}
                   </span>
                   <div className="min-w-0 flex-1">
@@ -531,6 +532,16 @@ function SettingsView() {
             </Card>
           )}
 
+          <Card>
+            <CardHeader
+              title="Appearance"
+              subtitle="Choose a theme, or follow your operating system."
+            />
+            <div className="p-5">
+              <ThemePicker />
+            </div>
+          </Card>
+
           {/* demo controls */}
           <Card className="border-amber-200 bg-amber-50/40">
             <div className="flex flex-wrap items-center justify-between gap-4 p-5">
@@ -540,7 +551,7 @@ function SettingsView() {
                 </p>
                 <p className="mt-1 max-w-xl text-[13px] leading-relaxed text-slate-600">
                   This workspace stores its data in your browser. Resetting
-                  restores the original TechNova Solutions sample data — 25
+                  restores the original BuildForgeo sample data — 25
                   customers, 30 products and services, 50 invoices and a year of
                   payment history. Anything you&apos;ve added will be discarded.
                 </p>

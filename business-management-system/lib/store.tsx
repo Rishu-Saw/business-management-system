@@ -29,8 +29,8 @@ import type {
 } from "./types";
 import { ROLE_PERMISSIONS } from "./types";
 
-const STATE_KEY = "bizflow:state:v2";
-const SESSION_KEY = "bizflow:session:v2";
+const STATE_KEY = "bizflow:state:v3";
+const SESSION_KEY = "bizflow:session:v3";
 
 type Draft<T> = Omit<T, "id">;
 

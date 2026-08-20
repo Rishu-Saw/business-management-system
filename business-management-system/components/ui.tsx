@@ -14,12 +14,12 @@ type ButtonSize = "sm" | "md";
 
 const VARIANTS: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-600 text-white hover:bg-brand-700 active:bg-brand-800 shadow-sm disabled:bg-brand-300",
+    "bg-brand-600 text-paper hover:bg-brand-700 active:bg-brand-800 shadow-sm disabled:bg-brand-300",
   secondary:
     "bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 active:bg-slate-100 shadow-sm disabled:text-slate-400",
   ghost: "text-slate-600 hover:bg-slate-100 active:bg-slate-200",
   danger:
-    "bg-rose-600 text-white hover:bg-rose-700 active:bg-rose-800 shadow-sm disabled:bg-rose-300",
+    "bg-rose-600 text-paper hover:bg-rose-700 active:bg-rose-800 shadow-sm disabled:bg-rose-300",
   subtle: "bg-brand-50 text-brand-700 hover:bg-brand-100 active:bg-brand-200",
 };
 
@@ -393,7 +393,7 @@ export function Modal({
   if (!mounted || !open) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-slate-900/40 p-0 sm:items-center sm:p-6">
+    <div className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-ink-900/60 p-0 sm:items-center sm:p-6">
       <div
         className="absolute inset-0"
         onClick={onClose}

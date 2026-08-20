@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme";
 import {
   ArrowRight,
   BarChart3,
@@ -158,7 +159,7 @@ const FAQS = [
   },
   {
     q: "How does the demo work?",
-    a: "The demo workspace belongs to TechNova Solutions, a fictional IT services business with a year of realistic data — 25 customers, 30 products and services, 50 invoices and a full payment history. Explore anything; you can reset the data whenever you like.",
+    a: "The demo workspace belongs to BuildForgeo, a fictional IT services business with a year of realistic data — 25 customers, 30 products and services, 50 invoices and a full payment history. Explore anything; you can reset the data whenever you like.",
   },
 ];
 
@@ -184,7 +185,7 @@ function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-paper">
             BF
           </span>
           <span className="text-[17px] font-semibold tracking-tight text-slate-900">
@@ -210,6 +211,7 @@ function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <Link
             href="/login"
             className="hidden rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 sm:block"
@@ -218,7 +220,7 @@ function SiteHeader() {
           </Link>
           <Link
             href="/login"
-            className="inline-flex h-10 items-center rounded-lg bg-brand-600 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-brand-700"
+            className="inline-flex h-10 items-center rounded-lg bg-brand-600 px-4 text-sm font-medium text-paper shadow-sm transition-colors hover:bg-brand-700"
           >
             Start free
           </Link>
@@ -235,7 +237,7 @@ function Hero() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60rem 30rem at 50% -10%, #eef4ff 0%, transparent 70%)",
+            "radial-gradient(60rem 30rem at 50% -10%, var(--hero-glow) 0%, transparent 70%)",
         }}
       />
       <div className="mx-auto max-w-6xl px-5 pb-20 pt-20 text-center sm:pt-28">
@@ -256,7 +258,7 @@ function Hero() {
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/login"
-            className="inline-flex h-12 items-center gap-2 rounded-lg bg-brand-600 px-6 text-[15px] font-medium text-white shadow-sm transition-colors hover:bg-brand-700"
+            className="inline-flex h-12 items-center gap-2 rounded-lg bg-brand-600 px-6 text-[15px] font-medium text-paper shadow-sm transition-colors hover:bg-brand-700"
           >
             Start free
             <ArrowRight size={18} />
@@ -409,11 +411,11 @@ function DashboardPreview() {
           {/* mini sidebar */}
           <div className="hidden w-48 shrink-0 border-r border-slate-200 p-4 sm:block">
             <div className="flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-brand-600 text-[11px] font-bold text-white">
-                TN
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-brand-600 text-[11px] font-bold text-paper">
+                BF
               </span>
               <span className="text-[13px] font-semibold text-slate-800">
-                TechNova
+                BuildForgeo
               </span>
             </div>
             <div className="mt-5 space-y-1.5">
@@ -534,7 +536,7 @@ function DashboardPreview() {
       <div className="mt-8 text-center">
         <Link
           href="/login?demo=1"
-          className="inline-flex h-11 items-center gap-2 rounded-lg bg-slate-900 px-5 text-sm font-medium text-white transition-colors hover:bg-slate-800"
+          className="inline-flex h-11 items-center gap-2 rounded-lg bg-ink-900 px-5 text-sm font-medium text-paper transition-colors hover:bg-ink-800"
         >
           <BarChart3 size={17} />
           Open the live demo dashboard
@@ -571,7 +573,7 @@ function Pricing() {
               }`}
             >
               {p.featured && (
-                <span className="absolute -top-3 left-7 rounded-full bg-brand-600 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
+                <span className="absolute -top-3 left-7 rounded-full bg-brand-600 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-paper">
                   Most popular
                 </span>
               )}
@@ -602,7 +604,7 @@ function Pricing() {
                 href="/login"
                 className={`mt-7 inline-flex h-11 items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                   p.featured
-                    ? "bg-brand-600 text-white hover:bg-brand-700"
+                    ? "bg-brand-600 text-paper hover:bg-brand-700"
                     : "border border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
                 }`}
               >
@@ -651,12 +653,12 @@ function Faq() {
 
 function CtaBand() {
   return (
-    <section className="bg-slate-900">
+    <section className="bg-ink-900">
       <div className="mx-auto max-w-4xl px-5 py-20 text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
           Stop running your business from spreadsheets
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-[17px] leading-relaxed text-slate-300">
+        <p className="mx-auto mt-4 max-w-xl text-[17px] leading-relaxed text-ink-300">
           Open the demo workspace and click through a full year of a real-looking
           business — customers, invoices, payments and reports.
         </p>
@@ -670,7 +672,7 @@ function CtaBand() {
           </Link>
           <Link
             href="/login"
-            className="inline-flex h-12 items-center rounded-lg border border-slate-700 px-6 text-[15px] font-medium text-white transition-colors hover:bg-slate-800"
+            className="inline-flex h-12 items-center rounded-lg border border-ink-700 px-6 text-[15px] font-medium text-paper transition-colors hover:bg-ink-800"
           >
             Create an account
           </Link>
@@ -685,7 +687,7 @@ function SiteFooter() {
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-xs font-bold text-white">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-xs font-bold text-paper">
             BF
           </span>
           <span className="text-sm font-semibold text-slate-900">BizFlow</span>

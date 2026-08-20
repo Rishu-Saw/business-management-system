@@ -202,7 +202,7 @@ function InvoiceDetail() {
         <Card className="print-area p-8 sm:p-10">
           <div className="flex flex-wrap items-start justify-between gap-6">
             <div className="flex items-start gap-4">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-600 text-base font-bold text-white">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-600 text-base font-bold text-paper">
                 {business.logoInitials}
               </span>
               <div>

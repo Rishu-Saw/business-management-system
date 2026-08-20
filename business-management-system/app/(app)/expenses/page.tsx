@@ -158,9 +158,10 @@ function ExpensesView() {
                   </div>
                   <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-slate-100">
                     <div
-                      className="h-full rounded-full bg-[#eb6834]"
+                      className="h-full rounded-full"
                       style={{
                         width: `${Math.max(2, (amount / maxCategory) * 100)}%`,
+                        background: "var(--series-expenses)",
                       }}
                     />
                   </div>

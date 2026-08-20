@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { StoreProvider } from "@/lib/store";
 import { ToastProvider } from "@/components/toast";
+import { THEME_SCRIPT } from "@/components/theme";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Applies the saved theme before first paint to avoid a light flash. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body>
         <StoreProvider>
           <ToastProvider>{children}</ToastProvider>

@@ -211,7 +211,7 @@ export default function OnboardingPage() {
     <div className="min-h-screen bg-slate-50">
       <div className="mx-auto max-w-3xl px-5 py-12">
         <div className="mb-8 flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-paper">
             BF
           </span>
           <span className="text-[17px] font-semibold tracking-tight text-slate-900">
@@ -230,7 +230,7 @@ export default function OnboardingPage() {
                   <span
                     className={`flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors ${
                       state === "done"
-                        ? "border-brand-600 bg-brand-600 text-white"
+                        ? "border-brand-600 bg-brand-600 text-paper"
                         : state === "current"
                           ? "border-brand-600 bg-white text-brand-600"
                           : "border-slate-200 bg-white text-slate-300"
@@ -297,7 +297,7 @@ export default function OnboardingPage() {
                           logoInitials: e.target.value.toUpperCase(),
                         })
                       }
-                      placeholder="TN"
+                      placeholder="BF"
                     />
                   </Field>
                 </div>
@@ -384,7 +384,7 @@ export default function OnboardingPage() {
                       <span
                         className={`flex h-11 w-11 items-center justify-center rounded-lg text-lg font-semibold ${
                           currency === c.code
-                            ? "bg-brand-600 text-white"
+                            ? "bg-brand-600 text-paper"
                             : "bg-slate-100 text-slate-600"
                         }`}
                       >
